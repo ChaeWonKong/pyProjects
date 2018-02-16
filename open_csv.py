@@ -1,4 +1,4 @@
-'''Mailing List CSV File Reader
+'''CSV E-mail Address Reader
 
 Open csv file and return mailing list'''
 
