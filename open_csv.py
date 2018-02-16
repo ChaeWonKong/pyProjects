@@ -4,7 +4,7 @@ Open csv file and return mailing list'''
 
 import csv
 
-data = open("/Users/ChaewonKong/Desktop/pyWeb/pyProjects/mailing.csv", 'r', encoding="UTF-8")
+data = open("mail_address.csv", 'r', encoding="UTF-8")
 # csvReader = csv.reader(data)
 dictreader = csv.DictReader(data)
 
