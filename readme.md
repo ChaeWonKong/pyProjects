@@ -9,3 +9,5 @@ This is an repository for python study
 ## Files
 1. __mail_address.csv__: CSV that Contains Names and e-mail Addresses
 1. __open_csv.py__: python program that reads mail_address.csv and returns e-mail addresses
+1. __import_practice.py__: main file that imports function from imported_practice.py
+1. __imported_practice.py__: sub file that imported for import_practice.py
