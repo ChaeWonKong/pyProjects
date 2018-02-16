@@ -1,6 +1,6 @@
 ---
 Title: Python Study Repository
-Date: 2018.02.16.
+Initiated Date: 2018.02.16.
 ---
 
 ## Description
