@@ -2,43 +2,35 @@
 
 sort the given list of integers by sorting from least digit to most significant digit'''
 
-def convert_str(values):
-	'''Return list consist of strings from list consist of integers'''
-	
-	str_list = []
-	for i in values:
-		str_list.append(str(i))
-
-	return str_list
-
 
 def max_digit(values):
 	'''Add '0' to elements to make them as same digit number'''
 
-	intMax = max(values)
-	digitMax = len(str(intMax))
+	int_max = max(values)
+	digit_max = len(str(int_max))
 
-	values = convert_str(values)
+	values = [str(v) for v in values]
 
 	result = [] #Contain converted outcomes
 
-	for i in values:
-		required = digitMax - len(i)
-		result.append(required * '0' + i)
+	for v in values:
+		required = digit_max - len(v)
+		result.append(required * '0' + v)
 
 	return result
 
 
+def radix_sort(values):
+	'''Sort given list by using radix sort starting from least significant digit.
 
+	Only works for plus integers.'''
 
-def sortLSD(values):
-	'''Sort given list by using radix sort starting from least significant digit'''
-
-	digitMax = len(values[0])
+	values = max_digit(values)
+	digit_max = len(values[0])
 	temp = []
 	result = []
 
-	for units in range(1, digitMax +1):
+	for units in range(1, digit_max +1):
 		#Contain all the digits of same units into temp list
 		for i in range(len(values)):
 			if values[i][-units] not in temp:
@@ -47,16 +39,16 @@ def sortLSD(values):
 		#print(temp)
 
 		#Sort values list by comparing the units
-		for k in temp:
+		for t in temp:
 			index = 0
 			length = len(values)
 			while index < length:
 				#Contain value in result list as order
-				if values[index][-units] == k:
+				if values[index][-units] == t:
 					result.append(values.pop(index))
 					length = len(values)
 				else:
-					index = index + 1
+					index += 1
 				
 		# Reset all the lists for next sequence
 		values = result
@@ -72,6 +64,6 @@ def sortLSD(values):
 #List given
 integers = [256, 56, 8, 2974, 13, 2972, 88] # List of integers given
 
-print(sortLSD(max_digit(integers)))
+print(radix_sort(integers))
 
 
