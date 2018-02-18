@@ -8,9 +8,7 @@ def max_digit(values):
 
 	int_max = max(values)
 	digit_max = len(str(int_max))
-
 	values = [str(v) for v in values]
-
 	result = [] # Contain converted outcomes
 
 	for v in values:
