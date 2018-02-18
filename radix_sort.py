@@ -11,7 +11,7 @@ def max_digit(values):
 
 	values = [str(v) for v in values]
 
-	result = [] #Contain converted outcomes
+	result = [] # Contain converted outcomes
 
 	for v in values:
 		required = digit_max - len(v)
@@ -31,19 +31,19 @@ def radix_sort(values):
 	result = []
 
 	for units in range(1, digit_max +1):
-		#Contain all the digits of same units into temp list
+		# Contain all the digits of same units into temp list
 		for i in range(len(values)):
 			if values[i][-units] not in temp:
 				temp.append(values[i][-units])
 			temp.sort()
-		#print(temp)
+		# print(temp)
 
-		#Sort values list by comparing the units
+		# Sort values list by comparing the units
 		for t in temp:
 			index = 0
 			length = len(values)
 			while index < length:
-				#Contain value in result list as order
+				# Contain value in result list as order
 				if values[index][-units] == t:
 					result.append(values.pop(index))
 					length = len(values)
@@ -55,7 +55,7 @@ def radix_sort(values):
 		temp = []
 		result = []
 
-	#Retern ordered values in integer form
+	# Retern ordered values in integer form
 	for i in values:
 		result.append(int(i))
 
