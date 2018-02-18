@@ -63,7 +63,11 @@ def sortLSD(values):
 		temp = []
 		result = []
 
-	return values
+	#Retern ordered values in integer form
+	for i in values:
+		result.append(int(i))
+
+	return result
 
 #List given
 integers = [256, 56, 8, 2974, 13, 2972, 88] # List of integers given
