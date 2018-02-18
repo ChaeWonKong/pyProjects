@@ -12,3 +12,4 @@ This is an repository for python study
 1. __import_practice.py__: main file that imports function from imported_practice.py
 1. __imported_practice.py__: sub file that imported for import_practice.py
 1. __radix_sort.py__: Practicing radix sort algorithm.
+1. __post_req.py__: Practice requests.post(); handling form fields in html
