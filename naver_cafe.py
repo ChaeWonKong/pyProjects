@@ -4,6 +4,7 @@ This program will automatically write attendance post
 on Naver Cafe when executed.'''
 
 from selenium import webdriver
+import time
 
 # Naver log-in page path
 login_path = "https://nid.naver.com/nidlogin.login"
@@ -29,16 +30,18 @@ driver.find_element_by_name("pw").send_keys("2theo22@@")
 # Press "Log in" button
 driver.find_element_by_xpath('//*[@id="frmNIDLogin"]/fieldset/input').click()
 
-# Open attendance post page of Jaegebal cafe
+# Open attendance post page
 driver.get("http://cafe.naver.com/AttendanceView.nhn?search.clubid=12730407&search.menuid=99")
-driver.find_element_by_tag_name('textarea').send_keys("출첵합니다~")
 
-# <textarea id="cmtinput" name="attendancePost.content" cols="" rows="" class="reply-write m-tcol-c"></textarea>
+# Use iframe
+time.sleep(3)
+driver.switch_to_frame(driver.find_element_by_id("cafe_main"))
 
-#cmtinput
-#//*[@id="cmtinput"]
+# Write comment
+driver.find_element_by_id("cmtinput").send_keys("출첵")
 
-'''네이버 로그인 하고 카페 들어가서 출석 게시판까지 이동 성공했으나, 댓글을 적는 폼 필드의 name, id를 찾지 못함'''
+# Submit the written comment
+driver.find_element_by_xpath('//*[@id="main-area"]/div[6]/table/tbody/tr[4]/td/table/tbody/tr/td[3]/a').click()
 
 
-# 버튼 xpath= '//*[@id="main-area"]/div[6]/table/tbody/tr[4]/td/table/tbody/tr/td[3]/a'
+''' naver는 iframe 을 사용해 글을 남기나봄. iframe으로 frame 교체를 해야만 코멘트 필드에 내용 작성이 가능함'''
