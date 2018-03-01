@@ -11,6 +11,10 @@ user_id = input("Please enter your NAVER ID -->")
 user_pw = input("Please enter your NAVER PASSWORD -->")
 
 
+def post_everyday():
+	'''Execute attendance_post function once per day'''
+
+
 def attendance_post(id, pw):
 	'''Post attendance comment automatically on given NAVER CAFE.'''
 
