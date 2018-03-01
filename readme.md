@@ -15,3 +15,4 @@ This is an repository for python study
 1. __post_req.py__: Practice requests.post(); handling form fields in html
 1. __subscriber.py__: Join programming newsletter e-mail subscription at O'REILLY automatically
 1. __attendance_post.py__: Automatically post attendance comment in naver cafe
+1. __clien.py__: Automatically post comment at clien.net to newly posted "Today's Recommendations"
