@@ -31,7 +31,7 @@ def clien_login():
 
 def clien_post_comment():
 	'''Post given comment input to articles in clien'''
-
+	
 	clien_login() # Sign in Clien.net
 
 	try:
