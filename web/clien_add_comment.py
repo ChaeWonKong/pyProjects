@@ -20,13 +20,18 @@ def clien_login():
 		driver.find_element_by_name("userId").send_keys(user_id)
 		driver.find_element_by_name("userPassword").send_keys(user_pw)
 		driver.find_element_by_xpath('//*[@id="loginForm"]/div[1]/button').click()
-
+		time.sleep(2)
 	except Exception as e:
-		print("{}: Unable to log in".format(e))
+		print(e)
 
 	else:
-		print("Log in success!")
-		time.sleep(2)
+		if driver.current_url == "https://www.clien.net/service/":
+			print("Successfully logged in!")
+			time.sleep(2)
+		else:
+			print("Login Failed: Please try again!")
+			driver.close()
+		
 
 
 def clien_post_comment():
