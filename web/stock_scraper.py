@@ -1,6 +1,7 @@
 """Stock Market Scraper
 
 Scrape and return KOSPI and KOSDAQ INDEX of Korean Stock Market"""
+
 from bs4 import BeautifulSoup
 import requests
 
@@ -22,8 +23,12 @@ def get_stock_index(request):
 	return index
 
 
-# index[1] = KOSPI
-# index[3] = KOSDAQ
+"""Offsets of each index
 
-
-print(get_stock_index(input("-->")))
+index[0] = 'KTOP 30'
+index[1] = 'KOSPI'
+index[2] = 'KOSPI 200'
+index[3] = 'KOSDAQ'
+index[4] = 'KOSDAQ 150'
+index[5] = 'KRX 300'
+"""
