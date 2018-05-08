@@ -20,7 +20,7 @@ def attendance_post(id, pw):
 
 	try:
 		# Set chrome webdriver path
-		driver = webdriver.Chrome("/Users/ChaewonKong/Desktop/pyWeb/chromedriver")
+		driver = webdriver.Chrome("/Users/ChaewonKong/Desktop/dev/chromedriver")
 
 		# Get naver log in page
 		driver.get("https://nid.naver.com/nidlogin.login")
